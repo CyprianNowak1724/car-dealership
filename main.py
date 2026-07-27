@@ -34,7 +34,14 @@ while is_running:
             if len(garage) == 0:
                 print("Brak samochodow w garazu.")
             else:
-                pass
+                for index, car in enumerate(garage):
+                    print(f"{index} - {car.brand} {car.model}")
+                car_index = int(input("Podaj numer samochodu do usuniecia: "))
+                if car_index < 0 or car_index >= len(garage):
+                    print("Nieprawidlowy numer samochodu.")
+                else:
+                    removed_car = garage.pop(car_index)
+                    print(f"Samochod {removed_car.brand} {removed_car.model} zostal usuniety z garazu.")
         case 4:
             is_running = False
             print("Dziekujemy za skorzystanie z naszego komisu samochodowego.")
