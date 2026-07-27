@@ -8,7 +8,8 @@ while is_running:
     print("1 - Dodaj samochod")
     print("2 - Wyswietl samochody")
     print("3 - Usun samochod")
-    print("4 - Wyjdz")
+    print("4 - Szukaj samochodu")
+    print("5 - Wyjdz")
 
     action = int(input("Wybierz akcje: "))
 
@@ -43,5 +44,19 @@ while is_running:
                     removed_car = garage.pop(car_index)
                     print(f"Samochod {removed_car.brand} {removed_car.model} zostal usuniety z garazu.")
         case 4:
+            found = False
+            
+            if len(garage) == 0:
+                print("Brak samochodow w garazu.")
+            else:
+                search_brand = input("Podaj marke samochodu do wyszukania: ")
+                for car in garage:
+                    if car.brand.lower() == search_brand.lower():
+                        car.show_info()
+                        found = True
+                if not found:
+                    print(f"Nie znaleziono samochodow marki {search_brand}.")
+                
+        case 5:
             is_running = False
             print("Dziekujemy za skorzystanie z naszego komisu samochodowego.")
