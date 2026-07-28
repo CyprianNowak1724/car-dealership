@@ -12,3 +12,17 @@ class Car:
         print(f"Rok Produkcji: {self.year}")
         print(f"Moc: {self.horsepower} KM")
         print(f"Cena: {self.price} PLN")
+
+    def to_dict(self):
+        return {
+            "brand": self.brand,
+            "model": self.model,
+            "year": self.year,
+            "horsepower": self.horsepower,
+            "price": self.price
+        }
+    
+    @classmethod
+    def from_dict(cls, data):
+        return cls(data["brand"], data["model"], data["year"], data["horsepower"], data["price"])
+        

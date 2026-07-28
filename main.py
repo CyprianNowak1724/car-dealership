@@ -1,6 +1,19 @@
 from car import Car
+import json
 
-garage = []
+def save_garage_to_file(filename, garage):
+    with open(filename, 'w') as file:
+        json.dump([car.to_dict() for car in garage], file, indent=4)
+
+def load_garage_from_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            data = json.load(file)
+            return [Car.from_dict(car_data) for car_data in data]
+    except FileNotFoundError:
+        return []
+    
+garage = load_garage_from_file("garage.json")
 is_running = True
 
 while is_running:
@@ -58,5 +71,7 @@ while is_running:
                     print(f"Nie znaleziono samochodow marki {search_brand}.")
                 
         case 5:
+            save_garage_to_file("garage.json", garage)
             is_running = False
             print("Dziekujemy za skorzystanie z naszego komisu samochodowego.")
+
