@@ -73,5 +73,5 @@ while is_running:
         case 5:
             save_garage_to_file("garage.json", garage)
             is_running = False
-            print("Dziekujemy za skorzystanie z naszego komisu samochodowego.")
+            print("Dziekujemy za skorzystanie z naszego komisu samochodowego :)")
 
