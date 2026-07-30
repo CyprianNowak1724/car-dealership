@@ -55,7 +55,7 @@ while is_running:
                     print("Nieprawidlowy numer samochodu.")
                 else:
                     removed_car = garage.pop(car_index)
-                    print(f"Samochod {removed_car.brand} {removed_car.model} zostal usuniety z garazu.")
+                    print(f"Samochod {removed_car.brand} {removed_car.model} zostal usuniety z garazu :(")
         case 4:
             found = False
             
