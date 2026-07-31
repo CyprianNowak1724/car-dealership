@@ -17,7 +17,7 @@ garage = load_garage_from_file("garage.json")
 is_running = True
 
 while is_running:
-    print("=== KOMIS SAMOCHODOWY ===")
+    print("== KOMIS SAMOCHODOWY ==")
     print("1 - Dodaj samochod")
     print("2 - Wyswietl samochody")
     print("3 - Usun samochod")
